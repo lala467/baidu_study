@@ -1,0 +1,293 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+header {
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(./imgs//前端学院设计图_0000s_0002s_0002_图层-1.png);
+    width: 100%;
+    height: 990px;
+}
+header h1 {
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 200px;
+}
+
+header >img {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    top: 372.198px;
+    width: 766px;
+    height: 84px;
+}
+header form {
+    border: 1px solid rgba(255,255,255,0.5);
+    position: relative;
+    width: 968px;
+    height: 248px;
+    top: 530px;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+#creat-account p{
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: #fff;
+    line-height: 1.75;
+    text-align: center;
+    opacity: 0.7;
+}
+#sign-up {
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.input-filed {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0,0,0,0.2);
+    margin-left: 30px;
+    width: 290px;
+    height: 48px;
+}
+input::-webkit-input-placeholder {
+    color: #fff;
+    font-weight: normal;
+    opacity: 0.8;
+}
+#sub-but {
+    background-color: #fff;
+    margin-left: 30px;
+    width: 125px;
+    height: 50px;
+}
+
+#ready-made {
+    background-color: #fff;
+    width: 100%;
+    height: 710px;
+}
+#ready-made >img{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+#ready-made img:nth-of-type(1) {
+    top: 80.5px;
+    width: 223px;
+    height: 11px;
+}
+#ready-made img:nth-of-type(2) {
+    top: 185.783px;
+    width: 657px;
+    height: 93px;
+}
+#ready-op {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-left: 200px;
+    margin-right: 200px;
+    position: relative;
+    top: 311px;
+    grid-gap: 50px;
+}
+
+
+#support {
+    width: 100%;
+    height: 800px;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0, 0, 0, 0.6)),url(./imgs/图层2.png);
+    margin: 0;
+}
+#support-left {
+    float: left;
+    margin-left: 200px;
+    margin-top: 150px;
+    width: 30%;
+}
+#support-left img {
+    margin-bottom: 30px;
+}
+#support-left button {
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#support-right {
+    float: right;
+    width: 50%;
+    margin-left: 50px;
+    margin-top: 150px;
+    background: url(imgs\IPad.png);
+}
+#support-right img {
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#products {
+    width: 100%;
+    height: 580px;
+}
+#products h2 {
+    position: relative;
+    top: 100px;
+    text-align: center;
+}
+#products-lay {
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+}
+#products-lay >div {
+    margin-left: 50px;
+}
+#products-lay img {
+    display: block;
+    margin-bottom: 30px;
+}
+.pro-title {
+    margin: 0 auto;
+}
+
+#photos {
+    width: 100%;
+    height: 1000px;
+}
+
+#photos div:nth-of-type(1) {
+    position: relative;
+    top: 150px;
+    left: 150px;
+    height: 50%;
+    width: 80%;
+}
+#photos div:nth-of-type(2) {
+    position: relative;
+    top: 50px;
+    left: 150px;
+    width: 80%;
+}
+#photos img {
+    display: inline-block;
+    margin-left: 80px;
+}
+
+#crea {
+    width: 100%;
+    height: 1084px;
+}
+#crew h2 {
+    position: relative;
+    top: 50px;
+    text-align: center;
+}
+#crew >img {
+    display: block;
+    position: relative;
+    top: 50px;
+    margin: 0 auto;
+}
+#crew-group {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row-gap: 30px;
+    margin-top: 100px ;
+    margin-left: 150px;
+}
+
+#info {
+    width: 100%;
+    height: 700px;
+}
+#info-left {
+    float: left;
+    margin-left: 150px;
+    margin-top: 200px;
+    width: 400px;
+    height: 560px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+#info-left input,
+#info-left label {
+    display: block;
+}
+#info-left label {
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: rgb(20, 20, 20);
+    line-height: 2;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#info-txt,
+#info-email {
+    border-radius: 2px;
+    margin-left: 50px;
+    width: 300px;
+    height: 48px;
+    border: 1px solid #000;
+    opacity: 0.5;
+    margin-bottom: 30px;
+}
+textarea {
+    width: 300px;
+    height: 144px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    opacity: 0.5;
+}
+#info-sub {
+    margin-left: 50px;
+    width: 300px;
+    height: 48px;
+    background-color: #000;
+    color: #fff;
+}
+#info-right {
+    float: right;
+    width: 40%;
+    margin-right: 150px;
+    margin-top: 300px;
+}
+#info-right img {
+    display: block;
+}
+#info-info {
+    margin-bottom: 100px;
+}
+.info-con {
+    margin-bottom: 15px;
+}
+
+footer {
+    width: 100%;
+    height: 410px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+}
+footer h6 {
+    color: #fff;
+    text-transform: uppercase;
+}
+footer p {
+    color: #fff;
+    opacity: 0.6;
+}
+#enjoy >img {
+    display: block;
+    margin-bottom: 30px;
+}
+#ico  {
+    display: flex;
+    justify-content: space-between;
+}
+

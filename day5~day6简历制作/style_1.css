@@ -1,0 +1,15 @@
+.tel p,
+.info p {
+    display: inline-block;
+    margin-right:30px;
+}
+h4 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.ab p, 
+.edu p, 
+.exp p {
+    margin-top: 0;
+    padding-top: 1px;
+}

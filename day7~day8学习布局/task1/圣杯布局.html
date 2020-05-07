@@ -1,0 +1,56 @@
+<!--好像是错的-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            min-width: 600px;
+        }
+        #container {
+            padding-left: 200px;
+            padding-right: 150px;
+        }
+        .column {
+            float: left;
+        }
+        #center {
+            width: 100%;
+            height: 500px;
+            background-color: pink;
+        }
+        #left {
+            width: 200px;
+            margin-left: -100%;
+            position: relative;
+            left: -200px;
+            height: 500px;
+            background-color: black;
+        }
+        #right {
+            width: 150px;
+            margin-right: -150px;
+            height: 500px;
+            background-color: red;
+        }
+        #footer {
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="container">
+        <div id="center" class="column">center</div>
+        <div id="left" class="column">left</div>
+        <div id="right" class="column">right</div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>

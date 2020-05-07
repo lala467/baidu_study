@@ -1,0 +1,56 @@
+/*1.
+.left {
+    float: left;
+    width: 30%;
+    height: 500px;
+    background-color: hotpink;
+}
+.right {
+    float: right;
+    width: 70%;
+    height: 500px;
+    background-color: black;
+}*/
+/*2.
+body,html {
+    width: 100%;
+    height: 100%;
+}
+.left {
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: hotpink;
+}
+.right {
+    height: 100%;
+    background-color: black;
+}
+*/
+/*中间自适应两侧定宽高，左右设置浮动，中间用margin来减，中间元素中html的最后
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    overflow: hidden;
+}
+.left {
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: #f00;
+}
+.right {
+    float: right;
+    width: 200px;
+    height: 100%;
+    background-color: #0f0;
+}
+.center {
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 100%;
+    background-color: #00f;
+}

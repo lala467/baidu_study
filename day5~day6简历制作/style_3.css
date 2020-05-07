@@ -1,0 +1,39 @@
+
+header {
+    margin-bottom: 0;
+    height: 50px;
+    color: #FFF;
+    background-color: #858585;
+}
+section {
+    margin: 0;
+    border : 1px solid #ddd;
+    width: 100%;
+    height: 100px;
+}
+h2 {
+    float: left;
+    margin: 0;
+    height: 100px;
+    line-height: 100px;     /*是文字垂直居中只需要设置line-height与height相等即可*/
+    width: 20%;
+    text-align: center;
+    background-color: #D6D6D6;
+} 
+.info p,
+.tel p {
+    display:inline-block;
+    margin-right: 30px;
+}
+h4 {
+    display: inline;
+}
+.ab-item,
+.edu-item,
+.exp-item{
+    display: inline-block;
+    width: 500px;
+}
+
+
+
