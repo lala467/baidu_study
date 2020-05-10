@@ -1,0 +1,255 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.aside {
+    float: left;
+    height: 100%;
+    width: 100px;
+    background: #1d2531;
+}
+.menu {
+    float: left;
+    height: 100%;
+    width: 210px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #222c3c;
+}
+main {
+    float: right;
+    height: 100%;
+    width: calc(100% - 350px);
+    background: #fff;
+}
+
+.aside >img {
+    display: block;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.aside-set {
+    position: fixed;
+    bottom: 5px;
+    display: flex;
+    justify-content: space-around;
+    width: 100px;   /*position与flex一起使用会失效，加上宽度就可以了*/
+}
+
+.menu-goal {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    margin-left: 20px;
+    width: 200px;
+}
+
+
+.menu-op {
+    border-bottom: 1px solid gray;
+    padding-bottom: 15px;
+}
+.menu h6{
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 6px;
+    font-family: "ProximaNova";
+    color: rgb(91, 103, 121);
+    text-transform: uppercase;
+}
+.menu p {
+    line-height: 2;
+    text-align: left;
+    margin: 0;
+    font-size: 7px;
+    font-family: "ProximaNova";
+    color: rgb(183, 192, 205);
+}
+.ico-set {
+    display: block;
+    float: right;
+    margin-top: 15px;
+}
+.prod {
+    position: relative;
+    margin-top: 10px;
+    display: block;
+}
+.menu-bot {
+    position: absolute;
+    bottom: 5px;
+}
+
+.contain {
+    box-sizing: border-box;
+    width: 160px;
+    margin: 0 auto;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #2d3848;
+}
+.bar {
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #907ae4;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid gray;
+}
+header h3 {
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+    padding: 20px;
+}
+.self {
+    float: right;
+    padding: 5px;
+}
+.self img,
+.self div {
+    display: inline-block;
+    padding-right: 20px;
+}
+.self p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.self p:nth-of-type(2) {
+    opacity: 0.5;
+}
+
+.mleft {
+    float: left;
+    width: 300px;
+    height: 100%;
+    border-right: 1px solid gray;
+}
+.search {
+    box-sizing: border-box;
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+}
+.search input {
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    width: 260px;
+    height: 38px;
+    opacity: 0.6;
+}
+.search img {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+}
+.message {
+    padding: 15px ;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+.message div {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.message div p {
+    margin: 5px;
+    font-size: 12px;
+    font-family: "ProximaNova";
+}
+.message div p:nth-of-type(2) {
+    opacity: 0.5;
+}
+.message> p {
+    float: right;
+    opacity: 0.5;
+}
+.message {
+    display: block;
+    width: 100%;
+}
+
+.mright {
+    float: right;
+    width: calc(100% - 301px);
+    height: 100%;
+    margin: 0;
+}
+.oper {
+    height: 60px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.oper h5,
+.oper div,
+.oper div:nth-of-type(2) p {
+    display: inline-block;
+}
+.oper h5 {
+    margin: 0;
+    font-size: 16px;
+}
+.oper div:nth-of-type(2) {
+    float: right;
+}
+.oper div:nth-of-type(1) {
+    position: relative;
+    left: 280px;
+    border-right: 1px solid gray;
+    padding-right: 25px;
+}
+.oper img {
+    float: left;
+}
+
+.content {
+    padding: 20px;
+    border: 1px solid gray;
+    border-bottom: 0px;
+    position: relative;
+}
+.content p {
+    display: inline-block;
+    font-family: "ProximaNova";
+    opacity: 0.6;
+}
+.content h6 {
+    width: 100px;
+    height: 15px;
+    position: absolute;
+    left: 300px;
+    top: -37px;
+    z-index: 3;
+    text-align: center;
+    background-color: #fff;
+}
+form {
+    padding: 20px;
+    border-left: 1px solid gray;
+}
+form input:nth-of-type(1) {
+    height: 46px;
+    width: 70px;
+    border-radius: 5px 0 0 5px;
+}
+form input:nth-of-type(2) {
+    width: calc(100% - 100px);
+    height: 40px;
+    border-radius: 0 5px 5px 0;
+}
+form input {
+    float: left;
+}
