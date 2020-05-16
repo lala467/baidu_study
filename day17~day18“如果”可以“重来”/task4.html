@@ -1,0 +1,16 @@
+<script>
+for(let i=1;i<=100;i++) {
+    let num = i.toString();
+    if(i%3==0){
+        num="PA";
+    } 
+    for(let j=0;j<num.length;j++) {
+        if(num[j]==3) {
+            num ="PA";
+            break;
+        }
+    }
+    console.log(num);
+
+}
+</script>

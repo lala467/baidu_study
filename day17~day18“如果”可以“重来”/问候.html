@@ -1,0 +1,13 @@
+<script>
+    let date = new Date();
+    let hour = Number(date.getHours());
+    if(5 < hour && hour < 10) {
+        alert("早上好！");
+    }else if(10<=hour && hour<17) {
+        alert("上午好！");
+    }else if(17<=hour && hour<24) {
+        alert("晚上好！");
+    }else {
+        alert("半夜好，该休息了！");
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+                width: 200px;
+                height: 40px;
+                border: 1px solid #CCCCCC;
+                background-color: antiquewhite;
+            }
+            tr {
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <table>
+        <th>九九乘法表</th>
+    </table>
+</body>
+<script>
+    for(let i=1;i<=9;i++) {
+        let tr =document.createElement("tr");
+        for(let j=1;j<=i;j++) {
+            let td = document.createElement("td");
+            let t=i*j;
+            console.log(t);
+            let str = i + "*" + j + "="+ t;
+            td.innerHTML=str;
+            tr.appendChild(td);
+        }
+        /*返回的是一个结果集数组，所以需要加上[0]，
+        *也可以直接在里面的for循环里面直接写table.appendChild（tr）.
+        */
+        let table =document.getElementsByTagName("table")[0];
+        table.appendChild(tr);
+    }
+</script>
+</html>
