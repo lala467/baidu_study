@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sprite {
+            background:url("http://ife.baidu.com/2016/static/img/erik_ce204002.jpg");
+            background-Repeat:no-repeat;
+            width: 480px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <div id="sprite"></div>
+</body>
+<script>
+    let sp = document.getElementById("sprite");
+    sp.style.backgroundPositionY = 0;
+    function spAnimal(flag) {
+        let pos = parseInt(sp.style.backgroundPositionY);
+        if((pos===-7680 && flag) ||pos===0 && !flag ){
+            flag=!flag;
+        }
+        console.log(pos);
+        if(flag ){    
+            sp.style.backgroundPositionY = pos- 480+"px";
+        }else{
+            sp.style.backgroundPositionY = pos+ 480+"px";
+        }
+        setTimeout(()=>{
+            spAnimal(flag)
+            },500);
+    }
+    spAnimal(true);
+</script>
+</html>
+
