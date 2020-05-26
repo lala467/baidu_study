@@ -1,0 +1,79 @@
+<script>
+    /*可以通过map辅助排序（基本思想是先将数组中的每个元素比较的实际值取出来（取出来的时候存好序号）
+    ，排序后再将数组恢复（通过序号再去访问元素数组，将其恢复）
+    // 需要被排序的数组
+    var list = ['Delta', 'alpha', 'CHARLIE', 'bravo'];
+
+    // 对需要排序的数字和位置的临时存储
+    var mapped = list.map(function(el, i) {
+        return { index: i, value: el.toLowerCase() };
+    })
+    console.log(mapped);
+    // 按照多个值排序数组
+    mapped.sort(function(a, b) {
+        return +(a.value > b.value) || +(a.value === b.value) - 1;
+    });
+    console.log(mapped);
+    // 根据索引得到排序的结果
+    var result = mapped.map(function(el){
+        return list[el.index];
+    });
+    console.log(result);
+    */
+    
+    var arr0 = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+    console.log(arr0.sort((a,b)=>a-b));
+    
+    var arr1 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+    console.log(arr1.sort());
+    //z-a排序
+    console.log(arr1.sort((a,b)=>b-a));
+    console.log(arr1.sort().reverse());
+    
+    //二维数组，按照每个元素中第二个数从大到小的顺序进行排序输出
+    var arr2 = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+    let mapped= arr2.map(function(el,i){
+        return {index:i,value:el};
+    });
+    mapped.sort(function(a,b){
+        return b.value[1]-a.value[1];
+    });
+    let result=mapped.map(function(el){
+        return arr2[el.index];
+    });
+    console.log(result);
+
+    //数组分别按元素对象的value值从小到大进行排序后输出
+    var arr3 = [
+        {
+            id: 1,
+            name: 'candy',
+            value: 40
+        }, {
+            id: 2,
+            name: 'Simon',
+            value: 50
+        }, {
+            id: 3,
+            name: 'Tony',
+            value: 45
+        }, {
+            id: 4,
+            name: 'Annie',
+            value: 60
+        }
+    ];
+    mapped={};
+    mapped=arr3.map(function(el,i){
+        return {index:i,values:el};
+    });
+    mapped.sort(function(a,b){
+        return a.values.value-b.values.value;
+    });
+    let res=mapped.map(function(el){
+        return arr3[el.index];
+    });
+    console.log(res);
+
+    
+</script>
