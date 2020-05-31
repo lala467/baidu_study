@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p ></p>
+    <p></p>
+</body>
+<script>
+    let p = document.getElementsByTagName("p");
+    let str=""
+    setInterval(timer, 1000);
+    function timer(){
+        let date=new Date();
+        let year=date.getFullYear();
+        let mon = date.getMonth()+1;
+        let day = date.getDate();
+        let week = date.getDay();
+        let hour = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        
+        p[0].innerHTML =toStrOne(year,mon,day,week,hour,min,sec);
+        p[1].innerHTML=toStrTwo(year,mon,day,week,hour,min,sec)
+    }
+    function getWeekOne(week) {
+        let weekday=new Array(7);
+        weekday[0]="星期日";
+        weekday[1]="星期一";
+        weekday[2]="星期二";
+        weekday[3]="星期三";
+        weekday[4]="星期四";
+        weekday[5]="星期五";
+        weekday[6]="星期六";
+        return weekday[week];
+    }
+    function getWeekTwo(week) {
+        let weekday=new Array(7);
+        weekday[0]="Sunday";
+        weekday[1]="Monday";
+        weekday[2]="Tuesday";
+        weekday[3]="Wednesday";
+        weekday[4]="Thursday";
+        weekday[5]="Friday";
+        weekday[6]="Saturday";
+        return weekday[week];
+    }
+    function setTim(t) {
+        if(t.length<1){
+            t="0"+t;
+        }
+        return t;
+    }
+    function setHour(hour) {
+        if(hour>12){
+            hour -=12;
+            str="PM";
+        }else{
+            str="AM";
+        }
+        return hour;
+    }
+    function toStrOne(year,mon,day,week,hour,min,sec) {
+        
+        return year+"年"+mon+"月"+day+"日"+getWeekOne(week)+" "+
+            setTim(hour)+":"+setTim(min)+":"+setTim(sec);
+        
+    }
+    function toStrTwo(year,mon,day,week,hour,min,sec) {
+        return year+"-"+mon+"-"+day+" "+getWeekTwo(week)+" "+
+            setTim(setHour(hour))+":"+setTim(min)+":"+setTim(sec)+" "+str;
+    }
+    </script>
+</html>
