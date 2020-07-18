@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #email-sug-wrapper li:hover{
+            background-color: blue;
+        }
+        .email-sug {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border: 1px;
+            width: 200px;
+            height: 22px;
+            line-height: 22px;
+        }
+        .email-sug li {
+
+        }
+        .selectedLi {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text">
+        <ul id="email-sug-wrapper" class="email-sug"></ul>
+    </div>
+</body>
+<script>
+    let inp = document.getElementById("email-input");
+    let postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+    let wrp = document.getElementById("email-sug-wrapper");
+    let nowSelectTipIndex = 0;
+    //input输入监听
+    inp.oninput = function(e) {
+        //如果按键不是上下及回车重置选中状态()
+        if(!(e.keyCode==40 || e.keyCode==38  || e.keyCode==13)){
+            nowSelectTipIndex = 0;
+        }
+        setUlText();
+        isVis();
+    }
+
+    //监听提示栏
+    wrp.addEventListener("click",function(e){
+        //let e = e || window.e;
+        let target = e.target || e.srcElement;
+        if(target.nodeName.toLowerCase()=="li"){
+            hidden();
+           inp.value=htmlDecode(target.innerHTML) ;
+        }
+    })
+    
+  /*  wrp.onclick=function(){
+       
+        let tips= wrp.childNodes;
+        console.log("1",tips);
+        for(let i=0;i<tips.length;i++){
+            if(tips[i].onclick){
+                inp.value=tips[i].innerHTML;
+                console.log(inp.value,tips[i].innerHTML)
+            }
+            console.log(i);
+        }
+        hidden();  
+    }*/
+//键盘监听
+    document.addEventListener("keydown",function(e){
+        var e = e || window.e;
+        let key = e.which || e.keyCode;
+        let list =document.getElementsByTagName("li");
+        //向下键
+        if(key == 40){
+            if(nowSelectTipIndex>=wrp.childNodes.length-1){
+                nowSelectTipIndex=0;
+            }else{
+                nowSelectTipIndex++;
+            }
+        }
+        //向上键
+        if(key==38){
+            if(nowSelectTipIndex==0){
+                nowSelectTipIndex=wrp.childNodes.length-1;
+            }else{
+                nowSelectTipIndex--;
+            }
+        }
+        if(key==27){
+            inp.select();
+        }
+        setUlText();
+        if(key==13 || key ==108){
+            inp.value=wrp.childNodes[nowSelectTipIndex].innerText;
+           hidden();
+        }
+
+    }) 
+    //获取input值
+    function getInputValue() {
+        let str = inp.value;
+        let s="";
+        for(let i=0;i<str.length;i++){
+            //
+            if(str[i]===" " || str[i]===" " ){
+                continue;
+            }else{
+                s += str[i];
+            }
+        }
+        return  s;   
+    }
+    //后缀匹配
+    function postList(){
+        let txt=getInputValue();
+        let matchList=new Array();
+        if(txt.search("@")!=0){
+            let len = txt.search("@");
+            let after=txt.substring(len+1,txt.length);
+            for(let i=0;i<postfixList.length;i++){
+                if(postfixList[i].search(after)==0){
+                    matchList.push(postfixList[i]);
+                }
+            }
+            //考虑到@之后没有字符
+            if(after==""){
+                return postfixList;
+            }
+            return matchList;
+        }else{
+            return postfixList;
+        }
+    }
+    //ul内li的提示内容
+    function ulText() {
+        let txt = htnmlEncode(getInputValue()) ;
+        let li = new  Array();
+        if(txt.indexOf("@")!=-1){
+            let before=txt.slice(0,txt.indexOf("@"));
+            for(i=0;i<postList().length;i++){
+                li[i]=before+"@"+postList()[i];
+            }
+        }else{
+            for(i=0;i<postfixList.length;i++){
+                li[i]=txt+"@"+postfixList[i];
+            }
+        }
+        
+       
+        return li;
+    }
+//提示内容修改到ul
+    function setUlText() {
+        let li = ulText();
+        //可以直接每次显示之前先清除再重新添加
+        while(wrp.hasChildNodes()){
+            wrp.removeChild(wrp.firstChild);
+        }
+        for(let i=0;i<li.length;i++) {
+            let tip_li = document.createElement("li");
+            tip_li.innerHTML=li[i];
+            wrp.appendChild(tip_li);    
+        }
+        //新增的在这个函数里面
+        document.getElementsByTagName("li")[nowSelectTipIndex].className="selectedLi";
+    }
+//提示框是否可见
+    function isVis() {
+        let s=getInputValue();
+        if(s=="" ){
+            hidden();
+        }else{
+            vis();
+        }
+    }
+
+    function hidden() {
+        wrp.style.display="none";
+    }
+
+    function vis() {
+        wrp.style.display="block";
+    }
+ /*1.用浏览器内部转换器实现html转码*/
+    function htnmlEncode(html){
+        //1.首先动态创建一个容器标签元素，如DIV
+        var temp = document.createElement ("div");
+        //2.然后将要转换的字符串设置为这个元素的innerText(ie支持)或者textContent(火狐，google支持)
+        (temp.textContent != undefined ) ? (temp.textContent = html) : (temp.innerText = html);
+         //3.最后返回这个元素的innerHTML，即得到经过HTML编码转换的字符串了
+        var output = temp.innerHTML;
+        temp = null;
+        return output;
+    }
+     /*2.用浏览器内部转换器实现html解码*/
+     function htmlDecode(text){
+            //1.首先动态创建一个容器标签元素，如DIV
+            var temp = document.createElement("div");
+            //2.然后将要转换的字符串设置为这个元素的innerHTML(ie，火狐，google都支持)
+            temp.innerHTML = text;
+            //3.最后返回这个元素的innerText(ie支持)或者textContent(火狐，google支持)，即得到经过HTML解码的字符串了。
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+</script>
+</html>
+
+
